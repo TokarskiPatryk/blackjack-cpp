@@ -1,13 +1,14 @@
 #include <cstdlib>
 #include <string>
 #include <iostream>
+#include <time.h>
 
 #include "blackjack-p.h"
 
 using namespace std;
 
 void Cards::setSeed() {
-    srand(1);
+    srand(time(0));
 }
 
 //git
@@ -117,13 +118,13 @@ string Player::convert_card_to_string(string card) {
         word+= "<Ace>";
 
     if (suit == "h")
-        word+= "<Hearts>";
+        word+= "<Hearts>\n";
     else if (suit == "s")
-        word+= "<Spades>";
+        word+= "<Spades>\n";
     else if (suit == "c")
-        word+= "<Clubs>";
+        word+= "<Clubs>\n";
     else if (suit == "d")
-        word+= "<Diamonds>";
+        word+= "<Diamonds>\n";
 
     return word;
 }
@@ -225,23 +226,23 @@ string Dealer::showFirstCards() {
 }
 
 //zmienic na return?
-void Dealer::whoWins(Player you) {
+string Dealer::whoWins(Player you) {
     int total_p, total_d;
     total_d = calculate_total();
     total_p = you.calculate_total();
 
     if (total_d > 21)
-        cout << "You win\n";
+        return "You win\n";
     else if (total_d == total_p)
-        cout << "TIE \n";
+        return "TIE \n";
     else if (total_d > 21 && total_p > 21)
-        cout << "You Lose \n";
+        return "You Lose \n";
     else if (total_p > 21)
-        cout << "You lose \n";
+        return "You lose \n";
     else if (total_p > total_d)
-        cout << "You win!\n";
+        return "You win!\n";
     else if (total_d > total_p)
-        cout << "You Lose. \n";
+        return "You Lose. \n";
 
 }
 

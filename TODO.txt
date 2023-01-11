@@ -1,0 +1,5 @@
+- change cards names to UTF-8 icons
+- add names "player" and "dealer"
+- add player:dealer score history (e.g. 2:5)
+- add application icon
+- change application title

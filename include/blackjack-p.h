@@ -35,7 +35,7 @@ public:
 class Dealer : public Player {
 public:
     string showFirstCards();
-    void whoWins(Player you);
+    string whoWins(Player you);
     Dealer();
 
 };

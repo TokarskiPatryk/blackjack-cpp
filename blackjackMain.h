@@ -32,11 +32,14 @@ class blackjackDialog: public wxDialog
         void OnQuit(wxCommandEvent& event);
         void OnAbout(wxCommandEvent& event);
         void OnButton3Click(wxCommandEvent& event);
+        void OnButton1Click(wxCommandEvent& event);
+        void OnButton2Click(wxCommandEvent& event);
         //*)
 
         //(*Identifiers(blackjackDialog)
         static const long ID_STATICTEXT1;
         static const long ID_STATICTEXT2;
+        static const long ID_STATICTEXT5;
         static const long ID_STATICTEXT3;
         static const long ID_STATICTEXT4;
         static const long ID_BUTTON1;
@@ -53,6 +56,7 @@ class blackjackDialog: public wxDialog
         wxStaticText* StaticText2;
         wxStaticText* StaticText3;
         wxStaticText* StaticText4;
+        wxStaticText* StaticText5;
         //*)
 
         DECLARE_EVENT_TABLE();
@@ -60,8 +64,7 @@ class blackjackDialog: public wxDialog
         Player you;
         Dealer dealer;
         Cards deck;
-        bool ans, f_answ; // ans - hit
-                          // f_answ - reset
+
         int total = 0, total_p = 0, total_d = 0;
 };
 

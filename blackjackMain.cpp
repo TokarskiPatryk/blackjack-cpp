@@ -50,6 +50,7 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 //(*IdInit(blackjackDialog)
 const long blackjackDialog::ID_STATICTEXT1 = wxNewId();
 const long blackjackDialog::ID_STATICTEXT2 = wxNewId();
+const long blackjackDialog::ID_STATICTEXT5 = wxNewId();
 const long blackjackDialog::ID_STATICTEXT3 = wxNewId();
 const long blackjackDialog::ID_STATICTEXT4 = wxNewId();
 const long blackjackDialog::ID_BUTTON1 = wxNewId();
@@ -75,6 +76,8 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     BoxSizer2->Add(StaticText1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticText2 = new wxStaticText(this, ID_STATICTEXT2, _("Label"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT2"));
     BoxSizer2->Add(StaticText2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    StaticText5 = new wxStaticText(this, ID_STATICTEXT5, _("     "), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT5"));
+    BoxSizer2->Add(StaticText5, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticText3 = new wxStaticText(this, ID_STATICTEXT3, _("Label"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
     BoxSizer2->Add(StaticText3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticText4 = new wxStaticText(this, ID_STATICTEXT4, _("Label"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT4"));
@@ -92,6 +95,8 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     BoxSizer1->Fit(this);
     BoxSizer1->SetSizeHints(this);
 
+    Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&blackjackDialog::OnButton1Click);
+    Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&blackjackDialog::OnButton2Click);
     Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&blackjackDialog::OnButton3Click);
     //*)
 }
@@ -112,29 +117,79 @@ void blackjackDialog::OnAbout(wxCommandEvent& event)
     wxString msg = wxbuildinfo(long_f);
     wxMessageBox(msg, _("Welcome to..."));
 }
-
+//reset button
 void blackjackDialog::OnButton3Click(wxCommandEvent& event)
 {
+    StaticText5->SetLabel(_("     "));
+    Button1->Enable();
+    Button2->Enable();
+    deck.reset();
+    dealer.reset_hand();
+    you.reset_hand();
     deck.setSeed();
 
     you.addToHand(deck.drawCard());
     you.addToHand(deck.drawCard());
 
     dealer.addToHand(deck.drawCard());
+    StaticText2->SetLabel(_(wxString::Format(wxT("%i"),dealer.calculate_total())));
     dealer.addToHand(deck.drawCard());
 // StaticText1 - dealer
 // StaticText2 - dealer value
-// StaticText3 - player value
+// StaticText3 - player
 // StaticText4 - player value
+// StaticText5 - status
 
     StaticText3->SetLabel(_(you.showCards()));
     total = you.calculate_total();
 
     if (total == 21) {
-
-        wxMessageBox(_("BlackJack! YOU WIN! "), _("Welcome to..."));
-        //goto mylabel;
+        StaticText4->SetLabel(wxString::Format(wxT("%i"),total));
+        Button1->Disable();
+        Button2->Disable();
+        StaticText5->SetLabel(_("BlackJack! YOU WIN! "));
     }
     StaticText1->SetLabel(_(dealer.showFirstCards()));
     StaticText4->SetLabel(wxString::Format(wxT("%i"),total));
+    Fit();
+}
+//hit button
+void blackjackDialog::OnButton1Click(wxCommandEvent& event)
+{
+    you.addToHand(deck.drawCard());
+    total_p = you.calculate_total();
+
+    StaticText3->SetLabel(_(you.showCards()));
+    StaticText4->SetLabel(wxString::Format(wxT("%i"),total_p));
+    if (total_p == 21) {
+        Button1->Disable();
+        Button2->Disable();
+        StaticText5->SetLabel(_("BlackJack! YOU WIN! "));
+    }
+    else if (total_p > 21) {
+        Button1->Disable();
+        Button2->Disable();
+        StaticText5->SetLabel(_("you lost"));
+        // block hit and stand button
+    }
+
+    Fit();
+}
+//stand button
+void blackjackDialog::OnButton2Click(wxCommandEvent& event)
+{
+    Button1->Disable();
+    Button2->Disable();
+
+    total_p = you.calculate_total();
+    total_d = dealer.calculate_total();
+	while (total_d < 17) {
+		dealer.addToHand(deck.drawCard());
+		total_d = dealer.calculate_total();
+	}
+	StaticText1->SetLabel(_(dealer.showCards()));
+    StaticText2->SetLabel(wxString::Format(wxT("%i"),total_d));
+
+    StaticText5->SetLabel(_(dealer.whoWins(you)));
+    Fit();
 }
