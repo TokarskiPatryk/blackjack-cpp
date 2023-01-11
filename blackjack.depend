@@ -4311,3 +4311,41 @@
 1665583572 c:\users\administrator\desktop\projekt-z-cpp\wxwidgets-3.0.5\include\wx\os2\stattext.h
 	"wx/control.h"
 
+1673454054 source:c:\users\administrator\desktop\projekt-z-cpp\blackjack2\blackjackapp.cpp
+	"blackjackApp.h"
+	"blackjackMain.h"
+	<wx/image.h>
+
+1673454054 c:\users\administrator\desktop\projekt-z-cpp\blackjack2\blackjackapp.h
+	<wx/app.h>
+
+1673470938 c:\users\administrator\desktop\projekt-z-cpp\blackjack2\blackjackmain.h
+	"blackjack-p.h"
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+
+1673469634 c:\users\administrator\desktop\projekt-z-cpp\blackjack2\include\blackjack-p.h
+	<cstdlib>
+	<string>
+	<iostream>
+
+1673471413 source:c:\users\administrator\desktop\projekt-z-cpp\blackjack2\blackjackmain.cpp
+	"blackjackMain.h"
+	<wx/msgdlg.h>
+	<string>
+	<windows.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1673454054 source:c:\users\administrator\desktop\projekt-z-cpp\blackjack2\resource.rc
+	"wx/msw/wx.rc"
+
+1673470828 source:c:\users\administrator\desktop\projekt-z-cpp\blackjack2\src\blackjack-p.cpp
+	<cstdlib>
+	<string>
+	<iostream>
+	<time.h>
+	"blackjack-p.h"
+
