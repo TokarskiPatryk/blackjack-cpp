@@ -1,5 +1,4 @@
 #include <cstdlib>
-#include <string>
 #include <iostream>
 #include <time.h>
 
@@ -83,48 +82,129 @@ void Cards::fill_deck() {
     deck[51] = "cA";
 }
 // zamiast tej nazwy uzyc emotki?
+
 string Player::convert_card_to_string(string card) {
     string suit, value, word;
     suit = card.substr(0, 1);
     value = card.substr(1, 1);
 
-    word="";
+    if (value == "2" && suit =="h")
+        word= "🂲";
+    else if (value == "2" && suit =="s")
+        word= "🂢";
+    else if (value == "2" && suit =="c")
+        word= "🂲";
+    else if (value == "2" && suit =="d")
+        word= "🃂";
 
-    if (value == "2")
-        word+= "<Two>";
-    else if (value == "3")
-        word+= "<Three>";
-    else if (value == "4")
-        word+= "<Four>";
-    else if (value == "5")
-        word+= "<Five>";
-    else if (value == "6")
-        word+= "<Six>";
-    else if (value == "7")
-        word+= "<Seven>";
-    else if (value == "8")
-        word+= "<Eight>";
-    else if (value == "9")
-        word+= "<Nine>";
-    else if (value == "1")
-        word+= "<Ten>";
-    else if (value == "J")
-        word+= "<Jack>";
-    else if (value == "Q")
-        word+= "<Queen>";
-    else if (value == "K")
-        word+= "<King>";
-    else if (value == "A")
-        word+= "<Ace>";
+    else if (value == "3" && suit =="h")
+        word= "🂳";
+    else if (value == "3" && suit =="s")
+        word= "🂣";
+    else if (value == "3" && suit =="c")
+        word= "🃓";
+    else if (value == "3" && suit =="d")
+        word= "🃃";
 
-    if (suit == "h")
-        word+= "<Hearts>\n";
-    else if (suit == "s")
-        word+= "<Spades>\n";
-    else if (suit == "c")
-        word+= "<Clubs>\n";
-    else if (suit == "d")
-        word+= "<Diamonds>\n";
+    else if (value == "4" && suit =="h")
+        word= "🂴";
+    else if (value == "4" && suit =="s")
+        word= "🂤";
+    else if (value == "4" && suit =="c")
+        word= "🃔";
+    else if (value == "4" && suit =="d")
+        word= "🃄";
+
+    else if (value == "5" && suit =="h")
+        word= "🂵";
+    else if (value == "5" && suit =="s")
+        word= "🂥";
+    else if (value == "5" && suit =="c")
+        word= "🃕";
+    else if (value == "5" && suit =="d")
+        word= "🃅";
+
+    else if (value == "6" && suit =="h")
+        word= "🂶";
+    else if (value == "6" && suit =="s")
+        word= "🂦";
+    else if (value == "6" && suit =="c")
+        word= "🃖";
+    else if (value == "6" && suit =="d")
+        word= "🃆";
+
+    else if (value == "7" && suit =="h")
+        word= "🂷";
+    else if (value == "7" && suit =="s")
+        word= "🂧";
+    else if (value == "7" && suit =="c")
+        word= "🃗";
+    else if (value == "7" && suit =="d")
+        word= "🃇";
+
+    else if (value == "8" && suit =="h")
+        word= "🂸";
+    else if (value == "8" && suit =="s")
+        word= "🂨";
+    else if (value == "8" && suit =="c")
+        word= "🃘";
+    else if (value == "8" && suit =="d")
+        word= "🃈";
+
+    else if (value == "9" && suit =="h")
+        word= "🂹";
+    else if (value == "9" && suit =="s")
+        word= "🂩";
+    else if (value == "9" && suit =="c")
+        word= "🃙";
+    else if (value == "9" && suit =="d")
+        word= "🃉";
+//dorobic reszte  i dodac karty
+
+    else if (value == "1" && suit =="h")
+        word= "🂺";
+    else if (value == "1" && suit =="s")
+        word= "🂪";
+    else if (value == "1" && suit =="c")
+        word= "🃚";
+    else if (value == "1" && suit =="d")
+        word= "🃊";
+
+    else if (value == "J" && suit =="h")
+        word= "🂻";
+    else if (value == "J" && suit =="s")
+        word= "🂫";
+    else if (value == "J" && suit =="c")
+        word= "🃛";
+    else if (value == "J" && suit =="d")
+        word= "🃋";
+
+    else if (value == "Q" && suit =="h")
+        word= "🂽";
+    else if (value == "Q" && suit =="s")
+        word= "🂭";
+    else if (value == "Q" && suit =="c")
+        word= "🃝";
+    else if (value == "Q" && suit =="d")
+        word= "🃍";
+
+    else if (value == "K" && suit =="h")
+        word= "🂾";
+    else if (value == "K" && suit =="s")
+        word= "🂮";
+    else if (value == "K" && suit =="c")
+        word= "🃞";
+    else if (value == "K" && suit =="d")
+        word= "🃎";
+
+    else if (value == "A" && suit =="h")
+        word= "🂱";
+    else if (value == "A" && suit =="s")
+        word= "🂡";
+    else if (value == "A" && suit =="c")
+        word= "🃑";
+    else if (value == "A" && suit =="d")
+        word= "🃁";
 
     return word;
 }
@@ -202,13 +282,21 @@ void Player::addToHand(string card) {
     hand[hand_size++] = card;
 }
 
+
 //git
-string Player::showCards() {
-    string c = "";
-    for (int i = 0; i < hand_size; i++) {
-            c+=convert_card_to_string(hand[i]);
-    }
-    return c;
+const char * Player::showCards() {
+    std::string c= convert_card_to_string(hand[0]);
+    c+=convert_card_to_string(hand[1]);
+    if(hand_size>=3) c+= convert_card_to_string(hand[2]);
+    if(hand_size>=4) c+= convert_card_to_string(hand[3]);
+    if(hand_size>=5) c+= convert_card_to_string(hand[4]);
+    if(hand_size>=6) c+= convert_card_to_string(hand[5]);
+    if(hand_size>=7) c+= convert_card_to_string(hand[6]);
+    if(hand_size>=8) c+= convert_card_to_string(hand[7]);
+    if(hand_size>=9) c+= convert_card_to_string(hand[8]);
+
+    const char * ss = c.c_str();
+    return ss;
 }
 
 //git
@@ -217,12 +305,13 @@ void Player::reset_hand() {
         hand[i] = " ";
     }
     hand_size = 0;
-
 }
 
 //git
-string Dealer::showFirstCards() {
-    return convert_card_to_string(hand[0])+"<Hidden>";
+const char * Dealer::showFirstCards() {
+    std::string str = convert_card_to_string(hand[0])+"🂠";
+    const char * ss = str.c_str();
+    return ss;
 }
 
 //zmienic na return?
@@ -232,17 +321,17 @@ string Dealer::whoWins(Player you) {
     total_p = you.calculate_total();
 
     if (total_d > 21)
-        return "You win\n";
+        return "You win";
     else if (total_d == total_p)
-        return "TIE \n";
+        return "TIE";
     else if (total_d > 21 && total_p > 21)
-        return "You Lose \n";
+        return "You Lose";
     else if (total_p > 21)
-        return "You lose \n";
+        return "You lose";
     else if (total_p > total_d)
-        return "You win!\n";
+        return "You win!";
     else if (total_d > total_p)
-        return "You Lose. \n";
+        return "You Lose";
 
 }
 

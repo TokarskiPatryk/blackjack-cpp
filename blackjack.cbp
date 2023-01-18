@@ -63,20 +63,10 @@
 		<Unit filename="blackjackApp.h" />
 		<Unit filename="blackjackMain.cpp" />
 		<Unit filename="blackjackMain.h" />
-		<Unit filename="include/Card.h" />
-		<Unit filename="include/Dealer.h" />
-		<Unit filename="include/Deck.h" />
-		<Unit filename="include/Hand.h" />
-		<Unit filename="include/Player.h" />
 		<Unit filename="include/blackjack-p.h" />
 		<Unit filename="resource.rc">
 			<Option compilerVar="WINDRES" />
 		</Unit>
-		<Unit filename="src/Card.cpp" />
-		<Unit filename="src/Dealer.cpp" />
-		<Unit filename="src/Deck.cpp" />
-		<Unit filename="src/Hand.cpp" />
-		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/blackjack-p.cpp" />
 		<Unit filename="wxsmith/blackjackdialog.wxs" />
 		<Extensions>

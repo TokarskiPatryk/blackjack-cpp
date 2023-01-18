@@ -66,6 +66,7 @@ class blackjackDialog: public wxDialog
         Cards deck;
 
         int total = 0, total_p = 0, total_d = 0;
+
 };
 
 #endif // BLACKJACKMAIN_H

@@ -1,6 +1,4 @@
 - change cards names to UTF-8 icons
-- set game stats from beginning 
-	or disable hit and stand button and temporary change 'reset' to 'start'
 - add names "player" and "dealer"
 - add player:dealer score history (e.g. 2:5)
 - add application icon

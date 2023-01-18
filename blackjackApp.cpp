@@ -29,6 +29,7 @@ bool blackjackApp::OnInit()
     	wxsOK = false;
     }
     //*)
+
     return wxsOK;
 
 }

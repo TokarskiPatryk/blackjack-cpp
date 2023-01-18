@@ -14,13 +14,18 @@
 #include <string>
 #include <windows.h>
 //(*InternalHeaders(blackjackDialog)
+#include <wx/font.h>
 #include <wx/intl.h>
 #include <wx/string.h>
 //*)
 
+//std::string str;
+//const char * c = str.c_str();
 
 //#undef _
-//#define _(s) wxString::FromUTF8Unchecked(s)
+//#define _(s) wxString::FromUTF8(s)
+
+//#define _(s) wxString::FromUTF8(🂲)U+1F0B3
 
 //helper functions
 enum wxbuildinfoformat {
@@ -67,30 +72,40 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
 {
     //(*Initialize(blackjackDialog)
     wxBoxSizer* BoxSizer2;
-    wxBoxSizer* BoxSizer3;
+    wxFlexGridSizer* FlexGridSizer1;
 
     Create(parent, wxID_ANY, _("wxWidgets app"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
     BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
     BoxSizer2 = new wxBoxSizer(wxVERTICAL);
-    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, _("Label"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
-    BoxSizer2->Add(StaticText1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText2 = new wxStaticText(this, ID_STATICTEXT2, _("Label"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT2"));
-    BoxSizer2->Add(StaticText2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText5 = new wxStaticText(this, ID_STATICTEXT5, _("     "), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT5"));
-    BoxSizer2->Add(StaticText5, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText3 = new wxStaticText(this, ID_STATICTEXT3, _("Label"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
-    BoxSizer2->Add(StaticText3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    StaticText4 = new wxStaticText(this, ID_STATICTEXT4, _("Label"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT4"));
-    BoxSizer2->Add(StaticText4, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    StaticText1 = new wxStaticText(this, ID_STATICTEXT1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+    wxFont StaticText1Font(24,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    StaticText1->SetFont(StaticText1Font);
+    BoxSizer2->Add(StaticText1, 1, wxALL|wxEXPAND, 5);
+    StaticText2 = new wxStaticText(this, ID_STATICTEXT2, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT2"));
+    wxFont StaticText2Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    StaticText2->SetFont(StaticText2Font);
+    BoxSizer2->Add(StaticText2, 1, wxALL|wxEXPAND, 5);
+    StaticText5 = new wxStaticText(this, ID_STATICTEXT5, wxEmptyString, wxDefaultPosition, wxSize(290,47), 0, _T("ID_STATICTEXT5"));
+    BoxSizer2->Add(StaticText5, 1, wxALL|wxEXPAND, 5);
+    StaticText3 = new wxStaticText(this, ID_STATICTEXT3, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
+    wxFont StaticText3Font(24,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    StaticText3->SetFont(StaticText3Font);
+    BoxSizer2->Add(StaticText3, 1, wxALL|wxEXPAND, 5);
+    StaticText4 = new wxStaticText(this, ID_STATICTEXT4, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT4"));
+    wxFont StaticText4Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    StaticText4->SetFont(StaticText4Font);
+    BoxSizer2->Add(StaticText4, 1, wxALL|wxEXPAND, 5);
     BoxSizer1->Add(BoxSizer2, 1, wxALL, 5);
-    BoxSizer3 = new wxBoxSizer(wxVERTICAL);
+    FlexGridSizer1 = new wxFlexGridSizer(3, 1, 0, 0);
     Button1 = new wxButton(this, ID_BUTTON1, _("Hit"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
-    BoxSizer3->Add(Button1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    Button1->Disable();
+    FlexGridSizer1->Add(Button1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     Button2 = new wxButton(this, ID_BUTTON2, _("Stand"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
-    BoxSizer3->Add(Button2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    Button3 = new wxButton(this, ID_BUTTON3, _("reset"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
-    BoxSizer3->Add(Button3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    BoxSizer1->Add(BoxSizer3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    Button2->Disable();
+    FlexGridSizer1->Add(Button2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    Button3 = new wxButton(this, ID_BUTTON3, _("start"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
+    FlexGridSizer1->Add(Button3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    BoxSizer1->Add(FlexGridSizer1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(BoxSizer1);
     BoxSizer1->Fit(this);
     BoxSizer1->SetSizeHints(this);
@@ -120,7 +135,15 @@ void blackjackDialog::OnAbout(wxCommandEvent& event)
 //reset button
 void blackjackDialog::OnButton3Click(wxCommandEvent& event)
 {
-    StaticText5->SetLabel(_("     "));
+    if(Button3->GetLabel()=="start")
+    {
+        //Button1->Show();
+        //Button2->Show();
+        Button3->SetLabel("reset");
+    }
+    StaticText5->SetLabel(_("                    "));
+    StaticText1->SetLabel(_("                    "));
+    StaticText3->SetLabel(_("                    "));
     Button1->Enable();
     Button2->Enable();
     deck.reset();
@@ -130,6 +153,7 @@ void blackjackDialog::OnButton3Click(wxCommandEvent& event)
 
     you.addToHand(deck.drawCard());
     you.addToHand(deck.drawCard());
+    StaticText3->SetLabel(wxString::FromUTF8(you.showCards()));
 
     dealer.addToHand(deck.drawCard());
     StaticText2->SetLabel(_(wxString::Format(wxT("%i"),dealer.calculate_total())));
@@ -140,7 +164,6 @@ void blackjackDialog::OnButton3Click(wxCommandEvent& event)
 // StaticText4 - player value
 // StaticText5 - status
 
-    StaticText3->SetLabel(_(you.showCards()));
     total = you.calculate_total();
 
     if (total == 21) {
@@ -149,17 +172,18 @@ void blackjackDialog::OnButton3Click(wxCommandEvent& event)
         Button2->Disable();
         StaticText5->SetLabel(_("BlackJack! YOU WIN! "));
     }
-    StaticText1->SetLabel(_(dealer.showFirstCards()));
+
     StaticText4->SetLabel(wxString::Format(wxT("%i"),total));
-    Fit();
+    StaticText1->SetLabel(wxString::FromUTF8(dealer.showFirstCards()));
+
 }
 //hit button
 void blackjackDialog::OnButton1Click(wxCommandEvent& event)
 {
     you.addToHand(deck.drawCard());
     total_p = you.calculate_total();
+    StaticText3->SetLabel(wxString::FromUTF8(you.showCards()));
 
-    StaticText3->SetLabel(_(you.showCards()));
     StaticText4->SetLabel(wxString::Format(wxT("%i"),total_p));
     if (total_p == 21) {
         Button1->Disable();
@@ -169,11 +193,11 @@ void blackjackDialog::OnButton1Click(wxCommandEvent& event)
     else if (total_p > 21) {
         Button1->Disable();
         Button2->Disable();
-        StaticText5->SetLabel(_("you lost"));
+        StaticText5->SetLabel(_("You lose"));
         // block hit and stand button
     }
 
-    Fit();
+
 }
 //stand button
 void blackjackDialog::OnButton2Click(wxCommandEvent& event)
@@ -187,9 +211,8 @@ void blackjackDialog::OnButton2Click(wxCommandEvent& event)
 		dealer.addToHand(deck.drawCard());
 		total_d = dealer.calculate_total();
 	}
-	StaticText1->SetLabel(_(dealer.showCards()));
+	StaticText1->SetLabel(wxString::FromUTF8(dealer.showCards()));
     StaticText2->SetLabel(wxString::Format(wxT("%i"),total_d));
 
     StaticText5->SetLabel(_(dealer.whoWins(you)));
-    Fit();
 }
