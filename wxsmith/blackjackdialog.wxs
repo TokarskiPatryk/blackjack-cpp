@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxDialog" name="blackjackDialog">
-		<title>wxWidgets app</title>
+		<title>BlackJack</title>
 		<id_arg>0</id_arg>
 		<object class="wxBoxSizer" variable="BoxSizer1" member="yes">
 			<object class="sizeritem">
@@ -88,7 +88,7 @@
 			<object class="sizeritem">
 				<object class="wxFlexGridSizer" variable="FlexGridSizer1" member="no">
 					<cols>1</cols>
-					<rows>3</rows>
+					<rows>4</rows>
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
 							<label>Hit</label>
@@ -111,8 +111,17 @@
 					</object>
 					<object class="sizeritem">
 						<object class="wxButton" name="ID_BUTTON3" variable="Button3" member="yes">
-							<label>start</label>
+							<label>Start</label>
 							<handler function="OnButton3Click" entry="EVT_BUTTON" />
+						</object>
+						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+						<border>5</border>
+						<option>1</option>
+					</object>
+					<object class="sizeritem">
+						<object class="wxButton" name="ID_BUTTON4" variable="Button4" member="yes">
+							<label>Help</label>
+							<handler function="OnButton4Click" entry="EVT_BUTTON" />
 						</object>
 						<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
 						<border>5</border>

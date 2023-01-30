@@ -4347,3 +4347,40 @@
 	<time.h>
 	"blackjack-p.h"
 
+1675103206 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackapp.cpp
+	"blackjackApp.h"
+	"blackjackMain.h"
+	<wx/image.h>
+
+1675103206 c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackapp.h
+	<wx/app.h>
+
+1675104826 c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackmain.h
+	"blackjack-p.h"
+	<wx/button.h>
+	<wx/dialog.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+
+1675103206 c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\include\blackjack-p.h
+	<cstdlib>
+	<iostream>
+
+1675103206 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackmain.cpp
+	"blackjackMain.h"
+	<wx/msgdlg.h>
+	<string>
+	<windows.h>
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1675103618 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\resource.rc
+	"wx/msw/wx.rc"
+
+1675103206 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\src\blackjack-p.cpp
+	<cstdlib>
+	<iostream>
+	<time.h>
+	"blackjack-p.h"
+

@@ -61,6 +61,7 @@ const long blackjackDialog::ID_STATICTEXT4 = wxNewId();
 const long blackjackDialog::ID_BUTTON1 = wxNewId();
 const long blackjackDialog::ID_BUTTON2 = wxNewId();
 const long blackjackDialog::ID_BUTTON3 = wxNewId();
+const long blackjackDialog::ID_BUTTON4 = wxNewId();
 //*)
 
 BEGIN_EVENT_TABLE(blackjackDialog,wxDialog)
@@ -74,7 +75,7 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     wxBoxSizer* BoxSizer2;
     wxFlexGridSizer* FlexGridSizer1;
 
-    Create(parent, wxID_ANY, _("wxWidgets app"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
+    Create(parent, wxID_ANY, _("BlackJack"), wxDefaultPosition, wxDefaultSize, wxDEFAULT_DIALOG_STYLE, _T("wxID_ANY"));
     BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
     BoxSizer2 = new wxBoxSizer(wxVERTICAL);
     StaticText1 = new wxStaticText(this, ID_STATICTEXT1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
@@ -96,15 +97,17 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     StaticText4->SetFont(StaticText4Font);
     BoxSizer2->Add(StaticText4, 1, wxALL|wxEXPAND, 5);
     BoxSizer1->Add(BoxSizer2, 1, wxALL, 5);
-    FlexGridSizer1 = new wxFlexGridSizer(3, 1, 0, 0);
+    FlexGridSizer1 = new wxFlexGridSizer(4, 1, 0, 0);
     Button1 = new wxButton(this, ID_BUTTON1, _("Hit"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
     Button1->Disable();
     FlexGridSizer1->Add(Button1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     Button2 = new wxButton(this, ID_BUTTON2, _("Stand"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
     Button2->Disable();
     FlexGridSizer1->Add(Button2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-    Button3 = new wxButton(this, ID_BUTTON3, _("start"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
+    Button3 = new wxButton(this, ID_BUTTON3, _("Start"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
     FlexGridSizer1->Add(Button3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+    Button4 = new wxButton(this, ID_BUTTON4, _("Help"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
+    FlexGridSizer1->Add(Button4, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     BoxSizer1->Add(FlexGridSizer1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     SetSizer(BoxSizer1);
     BoxSizer1->Fit(this);
@@ -113,6 +116,7 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&blackjackDialog::OnButton1Click);
     Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&blackjackDialog::OnButton2Click);
     Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&blackjackDialog::OnButton3Click);
+    Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&blackjackDialog::OnButton4Click);
     //*)
 }
 
@@ -127,11 +131,7 @@ void blackjackDialog::OnQuit(wxCommandEvent& event)
     Close();
 }
 
-void blackjackDialog::OnAbout(wxCommandEvent& event)
-{
-    wxString msg = wxbuildinfo(long_f);
-    wxMessageBox(msg, _("Welcome to..."));
-}
+
 //reset button
 void blackjackDialog::OnButton3Click(wxCommandEvent& event)
 {
@@ -215,4 +215,13 @@ void blackjackDialog::OnButton2Click(wxCommandEvent& event)
     StaticText2->SetLabel(wxString::Format(wxT("%i"),total_d));
 
     StaticText5->SetLabel(_(dealer.whoWins(you)));
+}
+
+void blackjackDialog::OnButton4Click(wxCommandEvent& event)
+{
+    const char * mes = "Zadaniem gracza jest uzyskać jak najbliżej (ale nie więcej niż) 21 punktów.\n\nKarty od dwójki do dziesiątki mają wartość równą numerowi karty.\nWalet, dama i król mają wartość równą 10 punktów.\nAs ma wartość równą 1 lub 11, w zależności co jest lepsze dla gracza.\n\nW Blackjacka gra się przeciwko krupierowi. Po rozdaniu gracz ma następujące możliwości:\nDobrać kartę (hit).\nNie dobierać kart (stand).";
+    wxMessageBox(_(wxString::FromUTF8(mes)),_("Zasady gry"));
+
+
+
 }
