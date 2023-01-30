@@ -4366,7 +4366,7 @@
 	<cstdlib>
 	<iostream>
 
-1675110051 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackmain.cpp
+1675111637 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackmain.cpp
 	"blackjackMain.h"
 	<wx/msgdlg.h>
 	<string>
@@ -4375,7 +4375,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1675103618 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\resource.rc
+1675112575 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\resource.rc
 	"wx/msw/wx.rc"
 
 1675111228 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\src\blackjack-p.cpp
