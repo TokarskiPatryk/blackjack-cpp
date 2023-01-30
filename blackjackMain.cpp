@@ -19,14 +19,6 @@
 #include <wx/string.h>
 //*)
 
-//std::string str;
-//const char * c = str.c_str();
-
-//#undef _
-//#define _(s) wxString::FromUTF8(s)
-
-//#define _(s) wxString::FromUTF8(🂲)U+1F0B3
-
 //helper functions
 enum wxbuildinfoformat {
     short_f, long_f };
@@ -118,6 +110,8 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&blackjackDialog::OnButton3Click);
     Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&blackjackDialog::OnButton4Click);
     //*)
+
+    SetIcon(wxICON(aaaa));
 }
 
 blackjackDialog::~blackjackDialog()
@@ -135,11 +129,11 @@ void blackjackDialog::OnQuit(wxCommandEvent& event)
 //reset button
 void blackjackDialog::OnButton3Click(wxCommandEvent& event)
 {
-    if(Button3->GetLabel()=="start")
+    if(Button3->GetLabel()=="Start")
     {
         //Button1->Show();
         //Button2->Show();
-        Button3->SetLabel("reset");
+        Button3->SetLabel("Reset");
     }
     StaticText5->SetLabel(_("                    "));
     StaticText1->SetLabel(_("                    "));
@@ -219,7 +213,7 @@ void blackjackDialog::OnButton2Click(wxCommandEvent& event)
 
 void blackjackDialog::OnButton4Click(wxCommandEvent& event)
 {
-    const char * mes = "Zadaniem gracza jest uzyskać jak najbliżej (ale nie więcej niż) 21 punktów.\n\nKarty od dwójki do dziesiątki mają wartość równą numerowi karty.\nWalet, dama i król mają wartość równą 10 punktów.\nAs ma wartość równą 1 lub 11, w zależności co jest lepsze dla gracza.\n\nW Blackjacka gra się przeciwko krupierowi. Po rozdaniu gracz ma następujące możliwości:\nDobrać kartę (hit).\nNie dobierać kart (stand).";
+    const char * mes = "Zadaniem gracza jest uzyskać jak najbliżej (ale nie więcej niż) 21 punktów.\n\nKarty od dwójki do dziesiątki mają wartość równą numerowi karty.\nWalet, dama i król mają wartość równą 10 punktów.\nAs ma wartość równą 1 lub 11, w zależności co jest lepsze dla gracza.\n\nW Blackjacka gra się przeciwko krupierowi. Po rozdaniu gracz ma następujące możliwości:\n\nDobrać kartę (hit).\nNie dobierać kart (stand).";
     wxMessageBox(_(wxString::FromUTF8(mes)),_("Zasady gry"));
 
 

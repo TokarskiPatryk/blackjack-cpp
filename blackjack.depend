@@ -4378,7 +4378,7 @@
 1675103618 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\resource.rc
 	"wx/msw/wx.rc"
 
-1675103206 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\src\blackjack-p.cpp
+1675106721 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\src\blackjack-p.cpp
 	<cstdlib>
 	<iostream>
 	<time.h>

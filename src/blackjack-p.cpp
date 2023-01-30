@@ -10,11 +10,10 @@ void Cards::setSeed() {
     srand(time(0));
 }
 
-//git
 void Cards::reset() {
     size = 52;
 }
-// git
+
 string Cards::drawCard() {
     int random;
     string temp;
@@ -26,7 +25,7 @@ string Cards::drawCard() {
 
     return temp;
 }
-// git ?
+
 void Cards::fill_deck() {
     deck[0] = "h2";
     deck[1] = "h3";
@@ -81,7 +80,7 @@ void Cards::fill_deck() {
     deck[50] = "cK";
     deck[51] = "cA";
 }
-// zamiast tej nazwy uzyc emotki?
+
 
 string Player::convert_card_to_string(string card) {
     string suit, value, word;
@@ -208,7 +207,7 @@ string Player::convert_card_to_string(string card) {
 
     return word;
 }
-//git
+
 int Player::convert_card_to_value(string card) {
     int score;
     string value;
@@ -245,7 +244,7 @@ int Player::convert_card_to_value(string card) {
 
 }
 
-//git
+
 int Player::calculate_total() {
     int temp = 0, total = 0, count = 0;
     //    string card, value;
@@ -277,13 +276,13 @@ int Player::calculate_total() {
     return total;
 }
 
-//git
+
 void Player::addToHand(string card) {
     hand[hand_size++] = card;
 }
 
 
-//git
+
 const char * Player::showCards() {
     std::string c= convert_card_to_string(hand[0]);
     c+=convert_card_to_string(hand[1]);
@@ -299,7 +298,7 @@ const char * Player::showCards() {
     return ss;
 }
 
-//git
+
 void Player::reset_hand() {
     for (int i = 0; i < hand_size; i++) {
         hand[i] = " ";
@@ -307,14 +306,14 @@ void Player::reset_hand() {
     hand_size = 0;
 }
 
-//git
+
 const char * Dealer::showFirstCards() {
     std::string str = convert_card_to_string(hand[0])+"🂠";
     const char * ss = str.c_str();
     return ss;
 }
 
-//zmienic na return?
+
 string Dealer::whoWins(Player you) {
     int total_p, total_d;
     total_d = calculate_total();
@@ -335,16 +334,16 @@ string Dealer::whoWins(Player you) {
 
 }
 
-//git
+
 Player::Player() {
     hand_size = 0;
 }
 
-//git
+
 Dealer::Dealer() {
 }
 
-//git
+
 Cards::Cards() {
     size = 52;
     fill_deck();
