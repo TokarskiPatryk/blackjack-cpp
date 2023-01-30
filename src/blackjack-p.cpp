@@ -320,17 +320,17 @@ string Dealer::whoWins(Player you) {
     total_p = you.calculate_total();
 
     if (total_d > 21)
-        return "You win";
+        return "Wygrana!";
     else if (total_d == total_p)
-        return "TIE";
+        return "Remis";
     else if (total_d > 21 && total_p > 21)
-        return "You Lose";
+        return "Przegrama";
     else if (total_p > 21)
-        return "You lose";
+        return "Przegrana";
     else if (total_p > total_d)
-        return "You win!";
+        return "Wygrana!";
     else if (total_d > total_p)
-        return "You Lose";
+        return "Przegrana";
 
 }
 

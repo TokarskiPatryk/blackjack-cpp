@@ -38,11 +38,16 @@ class blackjackDialog: public wxDialog
         //*)
 
         //(*Identifiers(blackjackDialog)
-        static const long ID_STATICTEXT1;
+        static const long ID_STATICTEXT6;
+        static const long ID_STATICTEXT7;
         static const long ID_STATICTEXT2;
+        static const long ID_STATICTEXT1;
+        static const long ID_STATICTEXT10;
         static const long ID_STATICTEXT5;
-        static const long ID_STATICTEXT3;
+        static const long ID_STATICTEXT8;
+        static const long ID_STATICTEXT9;
         static const long ID_STATICTEXT4;
+        static const long ID_STATICTEXT3;
         static const long ID_BUTTON1;
         static const long ID_BUTTON2;
         static const long ID_BUTTON3;
@@ -55,11 +60,16 @@ class blackjackDialog: public wxDialog
         wxButton* Button2;
         wxButton* Button3;
         wxButton* Button4;
+        wxStaticText* StaticText10;
         wxStaticText* StaticText1;
         wxStaticText* StaticText2;
         wxStaticText* StaticText3;
         wxStaticText* StaticText4;
         wxStaticText* StaticText5;
+        wxStaticText* StaticText6;
+        wxStaticText* StaticText7;
+        wxStaticText* StaticText8;
+        wxStaticText* StaticText9;
         //*)
 
         DECLARE_EVENT_TABLE();
