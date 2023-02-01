@@ -22,7 +22,7 @@
 												<weight>normal</weight>
 												<underlined>0</underlined>
 												<family>swiss</family>
-												<face>DejaVu Sans Condensed</face>
+												<face>DejaVu Sans</face>
 											</font>
 										</object>
 										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
@@ -46,7 +46,7 @@
 												<weight>normal</weight>
 												<underlined>0</underlined>
 												<family>swiss</family>
-												<face>DejaVu Sans Condensed</face>
+												<face>DejaVu Sans</face>
 											</font>
 										</object>
 										<flag>wxALL|wxEXPAND</flag>
@@ -62,7 +62,7 @@
 												<weight>normal</weight>
 												<underlined>0</underlined>
 												<family>swiss</family>
-												<face>DejaVu Sans Condensed</face>
+												<face>DejaVu Sans</face>
 											</font>
 										</object>
 										<flag>wxALL|wxEXPAND</flag>
@@ -79,7 +79,7 @@
 									<cols>1</cols>
 									<object class="sizeritem">
 										<object class="wxStaticText" name="ID_STATICTEXT10" variable="StaticText10" member="yes">
-											<label> </label>
+											<label></label>
 											<size>300,10</size>
 										</object>
 										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
@@ -119,7 +119,7 @@
 												<weight>normal</weight>
 												<underlined>0</underlined>
 												<family>swiss</family>
-												<face>DejaVu Sans Condensed</face>
+												<face>DejaVu Sans</face>
 											</font>
 										</object>
 										<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
@@ -143,7 +143,7 @@
 												<weight>normal</weight>
 												<underlined>0</underlined>
 												<family>swiss</family>
-												<face>DejaVu Sans Condensed</face>
+												<face>DejaVu Sans</face>
 											</font>
 										</object>
 										<flag>wxALL|wxEXPAND</flag>
@@ -159,7 +159,7 @@
 												<weight>normal</weight>
 												<underlined>0</underlined>
 												<family>swiss</family>
-												<face>DejaVu Sans Condensed</face>
+												<face>DejaVu Sans</face>
 											</font>
 										</object>
 										<flag>wxALL|wxEXPAND</flag>
@@ -189,7 +189,7 @@
 										<weight>normal</weight>
 										<underlined>0</underlined>
 										<family>swiss</family>
-										<face>DejaVu Sans Condensed</face>
+										<face>DejaVu Sans</face>
 									</font>
 									<handler function="OnButton1Click" entry="EVT_BUTTON" />
 								</object>
@@ -207,7 +207,7 @@
 										<weight>normal</weight>
 										<underlined>0</underlined>
 										<family>swiss</family>
-										<face>DejaVu Sans Condensed</face>
+										<face>DejaVu Sans</face>
 									</font>
 									<handler function="OnButton2Click" entry="EVT_BUTTON" />
 								</object>
@@ -224,7 +224,7 @@
 										<weight>normal</weight>
 										<underlined>0</underlined>
 										<family>swiss</family>
-										<face>DejaVu Sans Condensed</face>
+										<face>DejaVu Sans</face>
 									</font>
 									<handler function="OnButton3Click" entry="EVT_BUTTON" />
 								</object>
@@ -241,7 +241,7 @@
 										<weight>normal</weight>
 										<underlined>0</underlined>
 										<family>swiss</family>
-										<face>DejaVu Sans Condensed</face>
+										<face>DejaVu Sans</face>
 									</font>
 									<handler function="OnButton4Click" entry="EVT_BUTTON" />
 								</object>

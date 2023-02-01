@@ -92,7 +92,7 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     StaticText2->SetFont(StaticText2Font);
     Dealer->Add(StaticText2, 1, wxALL|wxEXPAND, 10);
     StaticText1 = new wxStaticText(this, ID_STATICTEXT1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
-    wxFont StaticText1Font(24,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont StaticText1Font(24,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     StaticText1->SetFont(StaticText1Font);
     Dealer->Add(StaticText1, 1, wxALL|wxEXPAND, 5);
     FlexGridSizer3->Add(Dealer, 1, wxALL|wxEXPAND, 5);
@@ -116,7 +116,7 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     StaticText4->SetFont(StaticText4Font);
     Player->Add(StaticText4, 1, wxALL|wxEXPAND, 10);
     StaticText3 = new wxStaticText(this, ID_STATICTEXT3, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
-    wxFont StaticText3Font(24,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont StaticText3Font(24,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     StaticText3->SetFont(StaticText3Font);
     Player->Add(StaticText3, 1, wxALL|wxEXPAND, 5);
     FlexGridSizer3->Add(Player, 1, wxALL|wxEXPAND, 5);
