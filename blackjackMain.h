@@ -9,7 +9,6 @@
 
 #ifndef BLACKJACKMAIN_H
 #define BLACKJACKMAIN_H
-
 #include "blackjack-p.h"
 
 //(*Headers(blackjackDialog)

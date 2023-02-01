@@ -9,7 +9,7 @@
 
 #include "blackjackMain.h"
 #include <wx/msgdlg.h>
-
+#include <wx/font.h>
 //dowywalenia
 #include <string>
 #include <windows.h>
@@ -82,13 +82,13 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     FlexGridSizer3 = new wxFlexGridSizer(0, 1, 0, 0);
     Dealer = new wxFlexGridSizer(0, 2, 0, 0);
     StaticText6 = new wxStaticText(this, ID_STATICTEXT6, _("Krupier"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT6"));
-    wxFont StaticText6Font(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont StaticText6Font(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     StaticText6->SetFont(StaticText6Font);
     Dealer->Add(StaticText6, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 10);
     StaticText7 = new wxStaticText(this, ID_STATICTEXT7, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT7"));
     Dealer->Add(StaticText7, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticText2 = new wxStaticText(this, ID_STATICTEXT2, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT2"));
-    wxFont StaticText2Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont StaticText2Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     StaticText2->SetFont(StaticText2Font);
     Dealer->Add(StaticText2, 1, wxALL|wxEXPAND, 10);
     StaticText1 = new wxStaticText(this, ID_STATICTEXT1, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT1"));
@@ -97,7 +97,7 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     Dealer->Add(StaticText1, 1, wxALL|wxEXPAND, 5);
     FlexGridSizer3->Add(Dealer, 1, wxALL|wxEXPAND, 5);
     Score = new wxFlexGridSizer(0, 1, 0, 0);
-    StaticText10 = new wxStaticText(this, ID_STATICTEXT10, _(" "), wxDefaultPosition, wxSize(300,10), 0, _T("ID_STATICTEXT10"));
+    StaticText10 = new wxStaticText(this, ID_STATICTEXT10, wxEmptyString, wxDefaultPosition, wxSize(300,10), 0, _T("ID_STATICTEXT10"));
     Score->Add(StaticText10, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticText5 = new wxStaticText(this, ID_STATICTEXT5, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT5"));
     wxFont StaticText5Font(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
@@ -106,13 +106,13 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     FlexGridSizer3->Add(Score, 1, wxALL|wxEXPAND, 5);
     Player = new wxFlexGridSizer(0, 2, 0, 0);
     StaticText8 = new wxStaticText(this, ID_STATICTEXT8, _("Gracz"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT8"));
-    wxFont StaticText8Font(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont StaticText8Font(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     StaticText8->SetFont(StaticText8Font);
     Player->Add(StaticText8, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 10);
     StaticText9 = new wxStaticText(this, ID_STATICTEXT9, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT9"));
     Player->Add(StaticText9, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
     StaticText4 = new wxStaticText(this, ID_STATICTEXT4, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT4"));
-    wxFont StaticText4Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont StaticText4Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     StaticText4->SetFont(StaticText4Font);
     Player->Add(StaticText4, 1, wxALL|wxEXPAND, 10);
     StaticText3 = new wxStaticText(this, ID_STATICTEXT3, wxEmptyString, wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT3"));
@@ -124,20 +124,20 @@ blackjackDialog::blackjackDialog(wxWindow* parent,wxWindowID id)
     FlexGridSizer4 = new wxFlexGridSizer(0, 2, 0, 0);
     Button1 = new wxButton(this, ID_BUTTON1, _("Hit"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
     Button1->Disable();
-    wxFont Button1Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont Button1Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     Button1->SetFont(Button1Font);
     FlexGridSizer4->Add(Button1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 10);
     Button2 = new wxButton(this, ID_BUTTON2, _("Stand"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
     Button2->Disable();
-    wxFont Button2Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont Button2Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     Button2->SetFont(Button2Font);
     FlexGridSizer4->Add(Button2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 10);
     Button3 = new wxButton(this, ID_BUTTON3, _("Start"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
-    wxFont Button3Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont Button3Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     Button3->SetFont(Button3Font);
     FlexGridSizer4->Add(Button3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 10);
     Button4 = new wxButton(this, ID_BUTTON4, _("Pomoc"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
-    wxFont Button4Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans Condensed"),wxFONTENCODING_DEFAULT);
+    wxFont Button4Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("DejaVu Sans"),wxFONTENCODING_DEFAULT);
     Button4->SetFont(Button4Font);
     FlexGridSizer4->Add(Button4, 1, wxALL, 10);
     FlexGridSizer2->Add(FlexGridSizer4, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
@@ -255,7 +255,5 @@ void blackjackDialog::OnButton4Click(wxCommandEvent& event)
 {
     const char * mes = "Zadaniem gracza jest uzyskać jak najbliżej (ale nie więcej niż) 21 punktów.\n\nKarty od dwójki do dziesiątki mają wartość równą numerowi karty.\nWalet, dama i król mają wartość równą 10 punktów.\nAs ma wartość równą 1 lub 11, w zależności co jest lepsze dla gracza.\n\nW Blackjacka gra się przeciwko krupierowi. Po rozdaniu gracz ma następujące możliwości:\n\nDobrać kartę (hit).\nNie dobierać kart (stand).";
     wxMessageBox(_(wxString::FromUTF8(mes)),_("Zasady gry"));
-
-
 
 }

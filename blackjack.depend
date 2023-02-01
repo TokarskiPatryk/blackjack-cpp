@@ -4355,7 +4355,7 @@
 1675103206 c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackapp.h
 	<wx/app.h>
 
-1675110326 c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackmain.h
+1675265009 c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackmain.h
 	"blackjack-p.h"
 	<wx/button.h>
 	<wx/dialog.h>
@@ -4366,9 +4366,10 @@
 	<cstdlib>
 	<iostream>
 
-1675111637 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackmain.cpp
+1675266446 source:c:\users\administrator\desktop\projekt-z-cpp\aaa blackjack\blackjack-cpp\blackjackmain.cpp
 	"blackjackMain.h"
 	<wx/msgdlg.h>
+	<wx/font.h>
 	<string>
 	<windows.h>
 	<wx/font.h>
